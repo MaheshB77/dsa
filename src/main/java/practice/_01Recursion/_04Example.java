@@ -5,11 +5,11 @@ package practice._01Recursion;
  * Q. Taylor series using recursion
  */
 public class _04Example {
-    static int p = 1;
-    static int f = 1;
+    static double p = 1;
+    static double f = 1;
 
-    static int e(int x, int n) {
-        int r;
+    static double e(double x, double n) {
+        double r;
         if (n == 0) {
             return 1;
         } else {
