@@ -20,6 +20,6 @@ public class _04Example {
         }
     }
     public static void main(String[] args) {
-        System.out.println(e(2, 5));
+        System.out.println(e(2, 4));
     }
 }
