@@ -5,13 +5,12 @@ package concepts._02Arrays;
  * Implementation of an Array ADT
  */
 public class Array {
-    int arr[];
-    int size;
-    int length;
+    private int arr[];
+    private int size;
+    private int length = 0;
 
-    Array(int size, int length) {
+    Array(int size) {
         this.size = size;
-        this.length = length;
         this.arr = new int[size];
     }
 
@@ -22,12 +21,18 @@ public class Array {
         }
         System.out.println("]");
     }
+
+    void append(int number) {
+        this.arr[length] = number;
+        length++;
+    }
 }
 
 class Test {
     public static void main(String[] args) {
-        Array adt = new Array(10, 5);
-        adt.arr[0] = 15;
+        Array adt = new Array(10);
+        adt.append(10);
+        adt.append(20);
         adt.display();
     }
 }
