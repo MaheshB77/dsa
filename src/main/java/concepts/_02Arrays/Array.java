@@ -34,6 +34,14 @@ public class Array {
         this.arr[index] = n;
         this.length++;
     }
+
+    void delete(int index) {
+        for (int i = index; i < this.length - 1; i++) {
+            this.arr[i] = this.arr[i + 1];
+        }
+        this.arr[this.length - 1] = 0;
+        this.length--;
+    }
 }
 
 class Test {
@@ -44,6 +52,7 @@ class Test {
         adt.append(2);
         adt.append(8);
         adt.insert(2, 10);
+        adt.delete(1);
         adt.display();
     }
 }
