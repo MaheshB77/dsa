@@ -42,6 +42,15 @@ public class Array {
         this.arr[this.length - 1] = 0;
         this.length--;
     }
+
+    int search(int element) {
+        for (int i = 0; i < this.length; i++) {
+            if (element == this.arr[i]) {
+                return i;
+            }
+        }
+        return  -1;
+    }
 }
 
 class Test {
@@ -53,6 +62,7 @@ class Test {
         adt.append(8);
         adt.insert(2, 10);
         adt.delete(1);
+        System.out.println(adt.search(8));
         adt.display();
     }
 }
