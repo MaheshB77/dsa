@@ -51,18 +51,36 @@ public class Array {
         }
         return  -1;
     }
+
+    int binarySearch(int element) {
+        int low = arr[0];
+        int high = this.length - 1;
+        int mid = (low + high) / 2;
+        while (low <= high) {
+            if (this.arr[mid] == element) {
+                return mid;
+            } else if (element < this.arr[mid]) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+            mid = (low + high) / 2;
+        }
+        return -1;
+    }
 }
 
 class Test {
     public static void main(String[] args) {
         Array adt = new Array(10);
+        adt.append(2);
+        adt.append(3);
         adt.append(4);
         adt.append(5);
-        adt.append(2);
         adt.append(8);
-        adt.insert(2, 10);
-        adt.delete(1);
-        System.out.println(adt.search(8));
+        adt.append(10);
+        System.out.println("Linear search => " + adt.search(8));
+        System.out.println("Binary search => " + adt.binarySearch(8));
         adt.display();
     }
 }
