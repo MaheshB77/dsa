@@ -14,6 +14,10 @@ public class Array {
         this.arr = new int[size];
     }
 
+    int length() {
+        return this.length;
+    }
+
     void display() {
         System.out.print("Array [ ");
         for (int i = 0; i < this.length; i++) {
@@ -68,6 +72,15 @@ public class Array {
         }
         return -1;
     }
+
+    void reverse() {
+        for (int i = 0, j = length()-1 ; i < length()/2; i++, j--) {
+            System.out.println(arr[i] + ", " + arr[j]);
+            int temp = this.arr[i];
+            this.arr[i] = arr[j];
+            this.arr[j] = temp;
+        }
+    }
 }
 
 class Test {
@@ -79,8 +92,12 @@ class Test {
         adt.append(5);
         adt.append(8);
         adt.append(10);
+        adt.append(11);
         System.out.println("Linear search => " + adt.search(8));
         System.out.println("Binary search => " + adt.binarySearch(8));
+        adt.display();
+        System.out.println("Length :: " + adt.length());
+        adt.reverse();
         adt.display();
     }
 }
