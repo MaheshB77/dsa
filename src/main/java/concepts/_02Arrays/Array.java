@@ -74,11 +74,46 @@ public class Array {
     }
 
     void reverse() {
-        for (int i = 0, j = length()-1 ; i < length()/2; i++, j--) {
-            System.out.println(arr[i] + ", " + arr[j]);
+        for (int i = 0, j = length()-1 ; i < j; i++, j--) {
             int temp = this.arr[i];
             this.arr[i] = arr[j];
             this.arr[j] = temp;
+        }
+    }
+
+    void lRotate() {
+        int temp = this.arr[0];
+        for (int i = 0; i < length() - 1; i++) {
+            this.arr[i] = this.arr[i + 1];
+        }
+        this.arr[length() - 1] = temp;
+    }
+
+    void lRotate(int times) {
+        for (int t = 0; t < times; t++) {
+            int temp = this.arr[0];
+            for (int i = 0; i < length() - 1; i++) {
+                this.arr[i] = this.arr[i + 1];
+            }
+            this.arr[length() - 1] = temp;
+        }
+    }
+
+    void rRotate() {
+        int temp = this.arr[length() - 1];
+        for (int i = length() - 1; i > 0 ; i--) {
+            this.arr[i] = this.arr[i - 1];
+        }
+        this.arr[0] = temp;
+    }
+
+    void rRotate(int times) {
+        for (int t = 0; t < times; t++) {
+            int temp = this.arr[length() - 1];
+            for (int i = length() - 1; i > 0 ; i--) {
+                this.arr[i] = this.arr[i - 1];
+            }
+            this.arr[0] = temp;
         }
     }
 }
@@ -97,7 +132,25 @@ class Test {
         System.out.println("Binary search => " + adt.binarySearch(8));
         adt.display();
         System.out.println("Length :: " + adt.length());
+
+        System.out.println("Reverse");
         adt.reverse();
+        adt.display();
+
+        System.out.println("Left rotate");
+        adt.lRotate();
+        adt.display();
+
+        System.out.println("Left rotate 2 times");
+        adt.lRotate(2);
+        adt.display();
+
+        System.out.println("Right rotate");
+        adt.rRotate();
+        adt.display();
+
+        System.out.println("Right rotate 2 times");
+        adt.rRotate(2);
         adt.display();
     }
 }
