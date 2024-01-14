@@ -2,14 +2,14 @@ package concepts._02Arrays;
 
 /**
  * @author Mahesh
- * Implementation of an Array ADT
+ * Implementation of an ArrayADT ADT
  */
-public class Array {
+public class ArrayADT {
     private int arr[];
     private int size;
     private int length = 0;
 
-    Array(int size) {
+    ArrayADT(int size) {
         this.size = size;
         this.arr = new int[size];
     }
@@ -19,7 +19,7 @@ public class Array {
     }
 
     void display() {
-        System.out.print("Array [ ");
+        System.out.print("ArrayADT [ ");
         for (int i = 0; i < this.length; i++) {
             System.out.print(arr[i] + " ");
         }
@@ -120,7 +120,7 @@ public class Array {
 
 class Test {
     public static void main(String[] args) {
-        Array adt = new Array(10);
+        ArrayADT adt = new ArrayADT(10);
         adt.append(2);
         adt.append(3);
         adt.append(4);
