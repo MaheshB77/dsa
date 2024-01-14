@@ -1,8 +1,8 @@
 # Problems
 
-1. Linear search
-2. Binary search
-3. Check if an array is sorted or not
+1. Linear search [✔️]
+2. Binary search [✔️]
+3. Check if an array is sorted or not [✔️]
 4. Find single missing element
 5. Find multiple missing elements
 6. Find duplicates in a sorted array
