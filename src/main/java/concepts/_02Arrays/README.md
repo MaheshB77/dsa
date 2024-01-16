@@ -8,5 +8,5 @@
 6. Find duplicates in a sorted array [✔️]
 7. Find duplicates in an unsorted array [✔️]
 8. Two sum [✔️]
-9. Two sum in a sorted array
+9. Two sum in a sorted array [✔️] 
 10. Find Min and Max in a single run
