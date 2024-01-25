@@ -33,6 +33,26 @@ public class LinkedList {
         head = newNode;
     }
 
+    void deleteAt(int position) {
+        int counter = 1;
+        Node temp = this.head;
+        Node prev = this.head;
+        while (counter != position) {
+            counter++;
+            prev = temp;
+            temp = temp.next;
+            if (temp == null) {
+                break;
+            }
+        }
+        if (temp == null) {
+            System.out.println("Position is out of bound");
+            return;
+        }
+        prev.next = temp.next;
+        temp.next = null;
+    }
+
     void display() {
         Node node = head;
         if (head == null) {
@@ -53,6 +73,10 @@ public class LinkedList {
         list.append(10);
         list.append(15);
         list.insertAtStart(20);
+        list.display();
+
+        list.deleteAt(3);
+        System.out.println("Deleted node at position 3");
         list.display();
     }
 }
