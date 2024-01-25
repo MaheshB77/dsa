@@ -53,6 +53,20 @@ public class LinkedList {
         temp.next = null;
     }
 
+    boolean search(int data) {
+        Node node = this.head;
+        if (node == null)
+            return false;
+
+        while (node.next != null) {
+            if (node.data == data) {
+                return true;
+            }
+            node = node.next;
+        }
+        return (node.data == data);
+    }
+
     void display() {
         Node node = head;
         if (head == null) {
@@ -78,5 +92,8 @@ public class LinkedList {
         list.deleteAt(3);
         System.out.println("Deleted node at position 3");
         list.display();
+
+        System.out.println("Searching 5 in the list : " + list.search(5));
+        System.out.println("Searching 6 in the list : " + list.search(6));
     }
 }
